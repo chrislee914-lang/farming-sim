@@ -24,11 +24,11 @@
     <header class="site-header">
       <a class="logo" href="#top">Meridian</a>
       <nav class="nav" aria-label="Primary">
+        <a href="#inside">Inside</a>
         <a href="#console">Console</a>
         <a href="#mind">Mind</a>
-        <a href="#stack">Stack</a>
       </nav>
-      <a class="nav-cta" href="#console">Open console</a>
+      <a class="nav-cta" href="#inside">Enter the core</a>
     </header>
 
     <main id="top">
@@ -41,8 +41,57 @@
             answer with calm precision.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#console">Try the console</a>
-            <a class="btn btn-ghost" href="#mind">See how it thinks</a>
+            <a class="btn btn-primary" href="#inside">Go inside</a>
+            <a class="btn btn-ghost" href="#console">Open console</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="inside" class="section inside-section reveal">
+        <div class="section-inner">
+          <p class="eyebrow">Inside the system</p>
+          <h2>The Meridian core</h2>
+          <p class="section-lede">
+            Step into the reasoning chamber — layers light as Meridian senses,
+            weighs, and speaks.
+          </p>
+
+          <div class="core-chamber" role="region" aria-label="Inside Meridian core">
+            <div class="core-visual" aria-hidden="true">
+              <div class="core-ring ring-outer"></div>
+              <div class="core-ring ring-mid"></div>
+              <div class="core-ring ring-inner"></div>
+              <div class="core-heart" id="core-heart">
+                <span>M</span>
+              </div>
+              <div class="orbit orbit-a"></div>
+              <div class="orbit orbit-b"></div>
+              <div class="orbit orbit-c"></div>
+            </div>
+
+            <div class="core-side">
+              <ol class="pipeline" id="pipeline">
+                <li data-stage="sense">
+                  <span class="stage-label">01 Sense</span>
+                  <span class="stage-copy" id="stage-sense">Waiting for signal…</span>
+                </li>
+                <li data-stage="weigh">
+                  <span class="stage-label">02 Weigh</span>
+                  <span class="stage-copy" id="stage-weigh">Paths idle.</span>
+                </li>
+                <li data-stage="speak">
+                  <span class="stage-label">03 Speak</span>
+                  <span class="stage-copy" id="stage-speak">Output quiet.</span>
+                </li>
+              </ol>
+
+              <div class="thought-stream" aria-live="polite">
+                <p class="thought-label">Thought stream</p>
+                <ul id="thought-stream">
+                  <li>Core idle — listening.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -52,7 +101,7 @@
           <p class="eyebrow">Live system</p>
           <h2>Meridian console</h2>
           <p class="section-lede">
-            A working demo of the AI loop — perception, reasoning, response.
+            Talk to the core from here — every reply lights the chamber above.
           </p>
 
           <div class="console" role="region" aria-label="Meridian AI console">

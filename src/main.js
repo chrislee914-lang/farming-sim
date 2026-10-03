@@ -6,6 +6,12 @@ const promptInput = document.getElementById('prompt')
 const latencyEl = document.getElementById('latency')
 const focusEl = document.getElementById('focus')
 const canvas = document.getElementById('neural-canvas')
+const coreHeart = document.getElementById('core-heart')
+const pipeline = document.getElementById('pipeline')
+const thoughtStream = document.getElementById('thought-stream')
+const stageSense = document.getElementById('stage-sense')
+const stageWeigh = document.getElementById('stage-weigh')
+const stageSpeak = document.getElementById('stage-speak')
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 const onScroll = () => {
@@ -31,6 +37,26 @@ if ('IntersectionObserver' in window) {
   reveals.forEach((el) => observer.observe(el))
 } else {
   reveals.forEach((el) => el.classList.add('is-visible'))
+}
+
+function pushThought(text) {
+  if (!thoughtStream) return
+  const li = document.createElement('li')
+  li.textContent = `› ${text}`
+  thoughtStream.prepend(li)
+  while (thoughtStream.children.length > 6) {
+    thoughtStream.lastElementChild?.remove()
+  }
+}
+
+function setStage(stage) {
+  if (!pipeline) return
+  pipeline.querySelectorAll('li').forEach((li) => {
+    const name = li.getAttribute('data-stage')
+    li.classList.toggle('is-active', name === stage)
+    if (stage === 'speak' && name !== 'speak') li.classList.add('is-done')
+    if (stage === 'sense') li.classList.remove('is-done')
+  })
 }
 
 function reason(prompt) {
@@ -66,6 +92,14 @@ function reason(prompt) {
       'Sense: greeting / identity check.',
       'Weigh: keep it human, keep it short.',
       'Speak: I’m Meridian — a demo AI system running locally in your browser. Ask for a plan, an explanation, or a sharper next move.',
+    ]
+  }
+
+  if (/inside|core|how do you think|chamber/.test(lower)) {
+    return [
+      'Sense: you want to look under the hood.',
+      'Weigh: show the loop, not the mystique.',
+      'Speak: Inside Meridian, every prompt runs three beats — Sense, Weigh, Speak. The glowing core is the active pass; the thought stream is the audit trail. No cloud model: just a local ritual that prefers one clear move over ten clever ones.',
     ]
   }
 
@@ -106,23 +140,36 @@ async function runPrompt(raw) {
 
   addBubble('user', `<p></p>`, 'You').querySelector('p').textContent = prompt
   promptInput.value = ''
+  coreHeart?.classList.add('is-thinking')
+  pushThought(`Signal received (${prompt.length} chars)`)
+  setStage('sense')
 
   const thinking = addBubble('system', `<p class="thinking">Sensing…</p>`, 'Meridian')
   const steps = reason(prompt)
   const answer = steps[2].replace(/^Speak:\s*/, '')
 
   await sleep(420)
+  if (stageSense) stageSense.textContent = steps[0].replace(/^Sense:\s*/, '')
+  pushThought(steps[0])
   thinking.querySelector('.body').innerHTML = `<p class="thinking">${steps[0]}</p>`
   if (latencyEl) latencyEl.textContent = `${28 + Math.floor(Math.random() * 40)}ms`
   if (focusEl) focusEl.textContent = (0.82 + Math.random() * 0.16).toFixed(2)
 
   await sleep(520)
+  setStage('weigh')
+  if (stageWeigh) stageWeigh.textContent = steps[1].replace(/^Weigh:\s*/, '')
+  pushThought(steps[1])
   thinking.querySelector('.body').innerHTML = `<p class="thinking">${steps[0]}<br>${steps[1]}</p>`
 
   await sleep(480)
+  setStage('speak')
+  if (stageSpeak) stageSpeak.textContent = answer.slice(0, 110) + (answer.length > 110 ? '…' : '')
+  pushThought('Speak: composing response')
   const p = document.createElement('p')
   thinking.querySelector('.body').replaceChildren(p)
   await typeInto(p, answer)
+  pushThought('Pass complete — core cooling')
+  coreHeart?.classList.remove('is-thinking')
 
   busy = false
   promptInput.focus()
@@ -141,12 +188,12 @@ document.querySelectorAll('[data-suggest]').forEach((button) => {
   })
 })
 
-// Seed greeting
 addBubble(
   'system',
-  '<p>Meridian online. Try a suggestion below, or ask for a plan, an explanation, or a sharper next move.</p>',
+  '<p>Meridian online. Enter the core above, then ask for a plan, an explanation, or a sharper next move.</p>',
   'Meridian',
 )
+pushThought('Core online — chamber ready')
 
 function startNeuralField() {
   if (!canvas || reduceMotion) return
