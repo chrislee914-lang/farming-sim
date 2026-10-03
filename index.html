@@ -28,7 +28,7 @@
         <div class="chat-list" id="chat-list"></div>
         <div class="sidebar-foot">
           <p class="brand-mini">Aria</p>
-          <p class="fineprint">ChatGPT-style demo · local AI · unofficial</p>
+          <p class="fineprint">ChatGPT-style · OpenAI · unofficial</p>
         </div>
       </aside>
 
@@ -39,9 +39,9 @@
           <button class="icon-btn" id="open-sidebar" type="button" aria-label="Open sidebar">
             ☰
           </button>
-          <div class="model-pill" title="Local demo model">
+          <div class="model-pill" id="model-pill" title="OpenAI-powered">
             <span class="dot"></span>
-            Aria 1.0
+            <span id="model-label">Connecting…</span>
           </div>
         </header>
 
@@ -80,7 +80,7 @@
             </button>
           </div>
           <p class="disclaimer">
-            Aria can make mistakes. This is a local demo inspired by ChatGPT — not affiliated with OpenAI.
+            Aria uses OpenAI for answers and reasoning. Responses can be wrong. Not affiliated with OpenAI.
           </p>
         </form>
       </main>

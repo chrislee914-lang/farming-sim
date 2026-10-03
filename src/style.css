@@ -266,8 +266,42 @@ textarea {
   margin: 0.25rem 0;
 }
 
-.content strong {
+.content .reasoning {
+  margin: 0 0 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: rgba(125, 206, 160, 0.06);
+  overflow: hidden;
+}
+
+.content .reasoning summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.7rem 0.85rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.content .reasoning summary::-webkit-details-marker {
+  display: none;
+}
+
+.content .reasoning-body {
+  padding: 0 0.85rem 0.85rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.content .answer {
+  min-width: 0;
+}
+
+.content .error {
+  color: var(--danger);
 }
 
 .cursor-blink::after {
