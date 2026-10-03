@@ -3,175 +3,257 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alligator — Stillwater Field Guide</title>
+    <title>Cinderella — A Disney Fairy-Tale Celebration</title>
     <meta
       name="description"
-      content="Stillwater: a living portrait of the American alligator — ancient hunter of southern wetlands."
+      content="An unofficial celebration of Disney's Cinderella — glass slippers, midnight magic, and a dance across the ballroom."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Playfair+Display:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#meet">Skip to content</a>
+    <a class="skip-link" href="#story">Skip to content</a>
+
+    <div class="sparkle-field" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span>
+    </div>
 
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="Stillwater home">Stillwater</a>
+      <a class="logo" href="#top">Disney</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#meet">Species</a>
-        <a href="#armor">Armor</a>
-        <a href="#range">Range</a>
-        <a href="#protect">Protect</a>
+        <a href="#story">Story</a>
+        <a href="#magic">Magic</a>
+        <a href="#dance">Dance</a>
       </nav>
-      <a class="nav-cta" href="#protect">Take action</a>
+      <a class="nav-cta" href="#dance">Watch her dance</a>
     </header>
 
     <main id="top">
       <section class="hero" aria-label="Hero">
-        <div class="hero-media" aria-hidden="true">
-          <img
-            class="hero-image"
-            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2400&q=80"
-            alt=""
-            width="2400"
-            height="1600"
-            fetchpriority="high"
-          />
-          <div class="hero-wash"></div>
-        </div>
-
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="brand">Stillwater</p>
-          <h1>The American alligator</h1>
+          <p class="brand">Disney</p>
+          <h1>Cinderella</h1>
           <p class="lede">
-            An ancient wetland hunter — armored, patient, and essential to the
-            southern marsh.
+            Glass slippers, a midnight clock, and one unforgettable waltz across
+            the ballroom floor.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#meet">Explore the species</a>
-            <a class="btn btn-ghost" href="#range">See the range</a>
+            <a class="btn btn-primary" href="#dance">See the dance</a>
+            <a class="btn btn-ghost" href="#story">Read the tale</a>
+          </div>
+        </div>
+
+        <div class="stage" aria-hidden="true">
+          <div class="stage-floor"></div>
+          <div class="cinderella-track">
+            <div class="cinderella">
+              <svg
+                class="cinderella-svg"
+                viewBox="0 0 120 180"
+                role="img"
+                aria-label="Cinderella dancing"
+              >
+                <defs>
+                  <linearGradient id="gown" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#dce9ff" />
+                    <stop offset="55%" stop-color="#8fb4ef" />
+                    <stop offset="100%" stop-color="#4d6fb8" />
+                  </linearGradient>
+                  <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#f6e27a" />
+                    <stop offset="100%" stop-color="#c9a227" />
+                  </linearGradient>
+                </defs>
+                <!-- hair -->
+                <ellipse cx="60" cy="28" rx="18" ry="22" fill="url(#hair)" />
+                <!-- face -->
+                <circle cx="60" cy="30" r="14" fill="#f7e4d4" />
+                <!-- tiara -->
+                <path
+                  d="M46 18 Q60 6 74 18 L70 20 Q60 12 50 20 Z"
+                  fill="#f0d57a"
+                />
+                <!-- torso -->
+                <path
+                  d="M48 44 Q60 48 72 44 L76 70 Q60 78 44 70 Z"
+                  fill="#c9d9f7"
+                />
+                <!-- arms -->
+                <g class="arm-left">
+                  <path
+                    d="M48 50 Q28 58 22 78"
+                    stroke="#f7e4d4"
+                    stroke-width="5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                </g>
+                <g class="arm-right">
+                  <path
+                    d="M72 50 Q92 42 104 58"
+                    stroke="#f7e4d4"
+                    stroke-width="5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                </g>
+                <!-- ball gown -->
+                <path
+                  class="gown"
+                  d="M44 68 Q60 74 76 68 Q108 100 100 160 Q60 172 20 160 Q12 100 44 68 Z"
+                  fill="url(#gown)"
+                />
+                <path
+                  d="M50 70 Q60 78 70 70 Q78 92 60 98 Q42 92 50 70 Z"
+                  fill="#eef4ff"
+                  opacity="0.55"
+                />
+                <!-- slippers -->
+                <ellipse class="slipper" cx="48" cy="168" rx="10" ry="4" fill="#f4e7a8" />
+                <ellipse class="slipper" cx="72" cy="168" rx="10" ry="4" fill="#f4e7a8" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="meet" class="section meet reveal">
+      <section id="story" class="section story reveal">
         <div class="section-inner">
-          <p class="eyebrow">Species</p>
-          <h2>Built for the blackwater</h2>
+          <p class="eyebrow">The story</p>
+          <h2>Once upon a dream</h2>
           <p class="section-lede">
-            <em>Alligator mississippiensis</em> has held these waters for
-            millions of years — ambush predator, nest architect, and keystone of
-            the swamp.
+            Disney’s 1950 classic turned a weary hearth into a midnight ball —
+            and a glass slipper into forever.
           </p>
-
-          <figure class="feature-media">
-            <img
-              src="https://images.unsplash.com/photo-1563207153-f403bf289096?auto=format&fit=crop&w=1800&q=80"
-              alt="American alligator resting at the water's edge among reeds"
-              width="1800"
-              height="1200"
-              loading="lazy"
-            />
-            <figcaption>
-              Adults can exceed 13 feet and live more than 50 years in the wild.
-            </figcaption>
-          </figure>
+          <div class="prose">
+            <p>
+              Kindness meets cruelty in a house of ashes, until a fairy
+              godmother arrives with a pumpkin, mice, and a dress spun from
+              starlight. One night is all she is granted — and one dance is all
+              the prince needs.
+            </p>
+            <p>
+              This page is an unofficial fan celebration of that Disney fairy
+              tale: romance, courage, and the idea that the right shoe can still
+              find the right foot.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section id="armor" class="section armor reveal">
+      <section id="magic" class="section magic reveal">
         <div class="section-inner">
-          <p class="eyebrow">Armor</p>
-          <h2>A living fortress</h2>
+          <p class="eyebrow">Magic</p>
+          <h2>Three sparks of midnight</h2>
           <p class="section-lede">
-            Osteoderms under thick hide, eyes and nostrils set high for a
-            stealth float, and a bite among the strongest in the animal kingdom.
+            The charm of Cinderella lives in a handful of unforgettable images.
           </p>
-
-          <ul class="trait-list" role="list">
+          <ul class="magic-list" role="list">
             <li>
-              <h3>Osteoderm armor</h3>
+              <h3>The glass slipper</h3>
               <p>
-                Bony plates beneath the skin shield the back and help regulate
-                heat after a long cool night.
+                Fragile, luminous, and impossible to fake — proof that wonder
+                leaves a footprint.
               </p>
             </li>
             <li>
-              <h3>Ambush senses</h3>
+              <h3>The pumpkin coach</h3>
               <p>
-                Pressure receptors along the jaws detect the faintest ripple —
-                dinner announces itself in the dark.
+                An ordinary gourd becomes a golden carriage, because magic loves
+                a good transformation.
               </p>
             </li>
             <li>
-              <h3>Powered by patience</h3>
+              <h3>The stroke of twelve</h3>
               <p>
-                Long periods of stillness conserve energy until a single
-                explosive strike decides the hunt.
+                Midnight steals the gown, but not the memory — or the other
+                slipper left behind.
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="range" class="section range reveal">
-        <div class="range-media" aria-hidden="true">
-          <img
-            src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=2000&q=80"
-            alt=""
-            width="2000"
-            height="1333"
-            loading="lazy"
-          />
-          <div class="range-wash"></div>
-        </div>
-        <div class="section-inner range-copy">
-          <p class="eyebrow">Range</p>
-          <h2>From the Carolinas to the Gulf</h2>
-          <p class="section-lede">
-            Freshwater marshes, cypress swamps, slow rivers, and man-made lakes —
-            anywhere warm water meets soft banks.
-          </p>
-          <p class="range-note">
-            Once nearly erased from parts of its range, the American alligator
-            rebounded through legal protection and wetland recovery. It remains a
-            barometer for the health of southern ecosystems.
-          </p>
-        </div>
-      </section>
-
-      <section id="protect" class="section protect reveal">
+      <section id="dance" class="section dance-encore reveal">
         <div class="section-inner">
-          <p class="eyebrow">Protect</p>
-          <h2>Keep the marsh wild</h2>
+          <p class="eyebrow">Encore</p>
+          <h2>May I have this dance?</h2>
           <p class="section-lede">
-            Give alligators space, keep wetlands wet, and never feed a wild
-            gator — a fed alligator is a dead alligator.
+            Watch Cinderella waltz from wing to wing — a little loop of Disney
+            ballroom joy.
           </p>
-          <div class="protect-actions">
-            <a
-              class="btn btn-primary"
-              href="https://www.fws.gov/species/american-alligator-alligator-mississippiensis"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn from U.S. Fish &amp; Wildlife
-            </a>
-            <a class="btn btn-ghost" href="#top">Back to the surface</a>
+        </div>
+        <div class="encore-stage" aria-hidden="true">
+          <div class="encore-floor"></div>
+          <div class="cinderella-track encore-track">
+            <div class="cinderella encore-cinderella">
+              <svg class="cinderella-svg" viewBox="0 0 120 180">
+                <defs>
+                  <linearGradient id="gown2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#dce9ff" />
+                    <stop offset="55%" stop-color="#8fb4ef" />
+                    <stop offset="100%" stop-color="#4d6fb8" />
+                  </linearGradient>
+                  <linearGradient id="hair2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#f6e27a" />
+                    <stop offset="100%" stop-color="#c9a227" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="60" cy="28" rx="18" ry="22" fill="url(#hair2)" />
+                <circle cx="60" cy="30" r="14" fill="#f7e4d4" />
+                <path
+                  d="M46 18 Q60 6 74 18 L70 20 Q60 12 50 20 Z"
+                  fill="#f0d57a"
+                />
+                <path
+                  d="M48 44 Q60 48 72 44 L76 70 Q60 78 44 70 Z"
+                  fill="#c9d9f7"
+                />
+                <g class="arm-left">
+                  <path
+                    d="M48 50 Q28 58 22 78"
+                    stroke="#f7e4d4"
+                    stroke-width="5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                </g>
+                <g class="arm-right">
+                  <path
+                    d="M72 50 Q92 42 104 58"
+                    stroke="#f7e4d4"
+                    stroke-width="5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                </g>
+                <path
+                  class="gown"
+                  d="M44 68 Q60 74 76 68 Q108 100 100 160 Q60 172 20 160 Q12 100 44 68 Z"
+                  fill="url(#gown2)"
+                />
+                <ellipse class="slipper" cx="48" cy="168" rx="10" ry="4" fill="#f4e7a8" />
+                <ellipse class="slipper" cx="72" cy="168" rx="10" ry="4" fill="#f4e7a8" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p class="footer-brand">Stillwater</p>
+      <p class="footer-brand">Disney · Cinderella</p>
       <p class="footer-meta">
-        A field guide to the American alligator. Photos via Unsplash. Built for
-        curiosity, not captivity.
+        An unofficial fan celebration. Disney and Cinderella are trademarks of
+        their respective owners. Built for delight, not affiliation.
       </p>
     </footer>
 
