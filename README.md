@@ -1,6 +1,6 @@
-# Stillwater — Alligator Field Guide
+# Aria — ChatGPT-style AI chat
 
-A single-page website about the American alligator: species traits, armor and senses, range, and wetland protection.
+A ChatGPT-like conversational AI demo that runs entirely in the browser: sidebar chat history, streaming replies, and multi-turn memory.
 
 ## Develop
 
@@ -15,3 +15,5 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+This is an unofficial demo and is not affiliated with OpenAI or ChatGPT.
