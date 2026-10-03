@@ -309,9 +309,61 @@ a:hover {
   color: var(--fog);
 }
 
+.prose {
+  max-width: 42rem;
+  margin: 0 0 2.25rem;
+}
+
+.prose-wide {
+  max-width: 48rem;
+}
+
+.prose p {
+  margin: 0 0 1.15rem;
+  color: var(--mist);
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.fact-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+  margin: 0 0 2.75rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(183, 224, 74, 0.28);
+}
+
+.fact-strip dt {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+
+.fact-strip dd {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--bone);
+}
+
+.fact-strip em {
+  font-style: italic;
+}
+
 .feature-media {
   margin: 0;
   position: relative;
+}
+
+.feature-media.tight-top {
+  margin-top: 3rem;
 }
 
 .feature-media img {
@@ -322,11 +374,39 @@ a:hover {
   filter: saturate(0.92) contrast(1.05);
 }
 
-.feature-media figcaption {
+.feature-media figcaption,
+.split-media figcaption,
+.gallery-item figcaption {
   margin-top: 0.85rem;
   max-width: 42ch;
   font-size: 1rem;
   color: var(--mist);
+}
+
+.split {
+  display: grid;
+  gap: 2.5rem;
+  align-items: end;
+}
+
+.split-copy .section-lede {
+  margin-bottom: 1.5rem;
+}
+
+.split-media {
+  margin: 0;
+}
+
+.split-media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.05);
+}
+
+.life {
+  background:
+    linear-gradient(180deg, transparent, rgba(15, 40, 34, 0.55) 18%, rgba(15, 40, 34, 0.4) 82%, transparent);
 }
 
 .armor {
@@ -360,6 +440,46 @@ a:hover {
 .trait-list li {
   padding-top: 1.25rem;
   border-top: 1px solid rgba(183, 224, 74, 0.28);
+}
+
+.compare-grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.compare-grid h3 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(183, 224, 74, 0.28);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bone);
+}
+
+.compare-grid ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.compare-grid li {
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--mist);
+}
+
+.compare-grid li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--moss);
 }
 
 .range {
@@ -399,8 +519,43 @@ a:hover {
 
 .range-note {
   margin: 0;
-  max-width: 40ch;
+  max-width: 44ch;
   color: var(--mist);
+}
+
+.gallery {
+  padding-bottom: clamp(3rem, 8vh, 5rem);
+}
+
+.gallery .section-inner {
+  margin-bottom: 2rem;
+}
+
+.gallery-stack {
+  display: grid;
+  gap: 1.25rem;
+  width: min(78rem, calc(100% - 1.5rem));
+  margin: 0 auto;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  filter: saturate(0.94) contrast(1.04);
+}
+
+.gallery-pair {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.gallery-pair img {
+  aspect-ratio: 4 / 3;
 }
 
 .protect {
@@ -412,6 +567,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
+  margin-top: 2rem;
 }
 
 .site-footer {
@@ -464,6 +620,13 @@ a:hover {
 @media (min-width: 720px) {
   .nav {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .fact-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .trait-list {
@@ -474,11 +637,30 @@ a:hover {
   .trait-list li {
     padding-top: 1.5rem;
   }
+
+  .compare-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+
+  .gallery-pair {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 960px) {
   .hero-copy {
     padding-bottom: clamp(4rem, 10vh, 7rem);
+  }
+
+  .split {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .nav {
+    gap: 1.5rem;
   }
 }
 
