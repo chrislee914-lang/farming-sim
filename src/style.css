@@ -298,13 +298,13 @@ main,
   left: 0;
   right: 0;
   bottom: 0;
-  height: clamp(11rem, 28vh, 16rem);
+  height: clamp(14rem, 36vh, 20rem);
   pointer-events: none;
 }
 
 .encore-stage {
   position: relative;
-  height: clamp(14rem, 34vh, 20rem);
+  height: clamp(16rem, 40vh, 24rem);
   margin-top: 1rem;
   overflow: hidden;
 }
@@ -315,7 +315,7 @@ main,
   left: 0;
   right: 0;
   bottom: 0;
-  height: 38%;
+  height: 32%;
   background:
     linear-gradient(180deg, transparent, rgba(231, 199, 106, 0.08) 30%, rgba(16, 26, 51, 0.85)),
     repeating-linear-gradient(
@@ -333,44 +333,68 @@ main,
 
 .cinderella {
   position: absolute;
-  bottom: 12%;
-  left: -8rem;
-  width: clamp(5.5rem, 12vw, 8rem);
-  animation: waltz-across 12s linear infinite;
+  bottom: 8%;
+  left: -10rem;
+  width: clamp(7.5rem, 18vw, 12rem);
+  animation: waltz-across 14s linear infinite;
   transform-origin: center bottom;
-  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45));
 }
 
 .encore-cinderella {
-  animation-duration: 10s;
-  animation-delay: 0.4s;
-  width: clamp(6rem, 14vw, 9rem);
+  animation-duration: 11s;
+  animation-delay: 0.35s;
+  width: clamp(8.5rem, 20vw, 13.5rem);
 }
 
-.cinderella-svg {
+.cinderella-img {
   width: 100%;
   height: auto;
-  animation: dance-bob 0.7s ease-in-out infinite;
-  transform-origin: 50% 85%;
+  animation: dance-bob 0.85s ease-in-out infinite;
+  transform-origin: 50% 90%;
+  mix-blend-mode: lighten;
+  border-radius: 0.25rem;
 }
 
-.arm-left {
-  transform-origin: 48px 50px;
-  animation: arm-wave-left 0.7s ease-in-out infinite;
+.split {
+  display: grid;
+  gap: 2.5rem;
+  align-items: end;
 }
 
-.arm-right {
-  transform-origin: 72px 50px;
-  animation: arm-wave-right 0.7s ease-in-out infinite;
+.portrait {
+  margin: 0;
 }
 
-.gown {
-  transform-origin: 60px 70px;
-  animation: gown-sway 0.7s ease-in-out infinite;
+.portrait img,
+.story-art img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.04);
+  border: 1px solid rgba(231, 199, 106, 0.25);
 }
 
-.slipper {
-  animation: slipper-glint 1.4s ease-in-out infinite;
+.portrait figcaption,
+.story-art figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.98rem;
+  color: var(--mist);
+}
+
+.story-art {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.story-art figure {
+  margin: 0;
+}
+
+.story-art img {
+  aspect-ratio: 3 / 4;
+  object-position: center top;
 }
 
 .section {
@@ -518,23 +542,23 @@ main,
 
 @keyframes waltz-across {
   0% {
-    left: -8rem;
+    left: -10rem;
     transform: scaleX(1);
   }
   48% {
-    left: calc(100% - 4rem);
+    left: calc(100% - 5rem);
     transform: scaleX(1);
   }
   50% {
-    left: calc(100% - 4rem);
+    left: calc(100% - 5rem);
     transform: scaleX(-1);
   }
   98% {
-    left: -8rem;
+    left: -10rem;
     transform: scaleX(-1);
   }
   100% {
-    left: -8rem;
+    left: -10rem;
     transform: scaleX(1);
   }
 }
@@ -542,50 +566,10 @@ main,
 @keyframes dance-bob {
   0%,
   100% {
-    transform: translateY(0) rotate(-2deg);
+    transform: translateY(0) rotate(-1.5deg);
   }
   50% {
-    transform: translateY(-0.55rem) rotate(2deg);
-  }
-}
-
-@keyframes arm-wave-left {
-  0%,
-  100% {
-    transform: rotate(8deg);
-  }
-  50% {
-    transform: rotate(-14deg);
-  }
-}
-
-@keyframes arm-wave-right {
-  0%,
-  100% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(16deg);
-  }
-}
-
-@keyframes gown-sway {
-  0%,
-  100% {
-    transform: skewX(-2deg);
-  }
-  50% {
-    transform: skewX(2deg);
-  }
-}
-
-@keyframes slipper-glint {
-  0%,
-  100% {
-    fill: #f4e7a8;
-  }
-  50% {
-    fill: #fff6cc;
+    transform: translateY(-0.7rem) rotate(1.5deg);
   }
 }
 
@@ -597,6 +581,18 @@ main,
   .magic-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  .story-art {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+    align-items: center;
   }
 }
 
@@ -611,11 +607,7 @@ main,
   .hero-actions,
   .reveal,
   .cinderella,
-  .cinderella-svg,
-  .arm-left,
-  .arm-right,
-  .gown,
-  .slipper,
+  .cinderella-img,
   .sparkle-field span {
     animation: none !important;
     transition: none !important;
