@@ -1,6 +1,6 @@
-# Stillwater — Alligator Field Guide
+# Meridian — AI System Build
 
-A single-page website about the American alligator: species traits, armor and senses, range, and wetland protection.
+An interactive demo AI system: neural field background, live console, and a local reasoning loop (sense → weigh → speak) with no server required.
 
 ## Develop
 

@@ -3,175 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alligator — Stillwater Field Guide</title>
+    <title>Meridian — AI System</title>
     <meta
       name="description"
-      content="Stillwater: a living portrait of the American alligator — ancient hunter of southern wetlands."
+      content="Meridian is a demo AI system: a neural console that turns noisy questions into clear next moves."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=Sora:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#meet">Skip to content</a>
+    <a class="skip-link" href="#console">Skip to console</a>
+
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
 
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="Stillwater home">Stillwater</a>
+      <a class="logo" href="#top">Meridian</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#meet">Species</a>
-        <a href="#armor">Armor</a>
-        <a href="#range">Range</a>
-        <a href="#protect">Protect</a>
+        <a href="#console">Console</a>
+        <a href="#mind">Mind</a>
+        <a href="#stack">Stack</a>
       </nav>
-      <a class="nav-cta" href="#protect">Take action</a>
+      <a class="nav-cta" href="#console">Open console</a>
     </header>
 
     <main id="top">
       <section class="hero" aria-label="Hero">
-        <div class="hero-media" aria-hidden="true">
-          <img
-            class="hero-image"
-            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2400&q=80"
-            alt=""
-            width="2400"
-            height="1600"
-            fetchpriority="high"
-          />
-          <div class="hero-wash"></div>
-        </div>
-
         <div class="hero-copy">
-          <p class="brand">Stillwater</p>
-          <h1>The American alligator</h1>
+          <p class="brand">Meridian</p>
+          <h1>An AI system that finds the clear path</h1>
           <p class="lede">
-            An ancient wetland hunter — armored, patient, and essential to the
-            southern marsh.
+            Ask a question. Watch Meridian map the signal, weigh options, and
+            answer with calm precision.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#meet">Explore the species</a>
-            <a class="btn btn-ghost" href="#range">See the range</a>
+            <a class="btn btn-primary" href="#console">Try the console</a>
+            <a class="btn btn-ghost" href="#mind">See how it thinks</a>
           </div>
         </div>
       </section>
 
-      <section id="meet" class="section meet reveal">
+      <section id="console" class="section console-section reveal">
         <div class="section-inner">
-          <p class="eyebrow">Species</p>
-          <h2>Built for the blackwater</h2>
+          <p class="eyebrow">Live system</p>
+          <h2>Meridian console</h2>
           <p class="section-lede">
-            <em>Alligator mississippiensis</em> has held these waters for
-            millions of years — ambush predator, nest architect, and keystone of
-            the swamp.
+            A working demo of the AI loop — perception, reasoning, response.
           </p>
 
-          <figure class="feature-media">
-            <img
-              src="https://images.unsplash.com/photo-1563207153-f403bf289096?auto=format&fit=crop&w=1800&q=80"
-              alt="American alligator resting at the water's edge among reeds"
-              width="1800"
-              height="1200"
-              loading="lazy"
-            />
-            <figcaption>
-              Adults can exceed 13 feet and live more than 50 years in the wild.
-            </figcaption>
-          </figure>
+          <div class="console" role="region" aria-label="Meridian AI console">
+            <div class="console-top">
+              <div class="status">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>System online</span>
+              </div>
+              <div class="meters" aria-hidden="true">
+                <span>latency <strong id="latency">42ms</strong></span>
+                <span>focus <strong id="focus">0.91</strong></span>
+              </div>
+            </div>
+
+            <div class="transcript" id="transcript" aria-live="polite"></div>
+
+            <form class="composer" id="composer">
+              <label class="sr-only" for="prompt">Message Meridian</label>
+              <input
+                id="prompt"
+                name="prompt"
+                type="text"
+                autocomplete="off"
+                placeholder="Ask Meridian anything…"
+                maxlength="240"
+              />
+              <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+
+            <div class="suggestions" aria-label="Try a prompt">
+              <button type="button" data-suggest="Map a launch plan for a weekend product demo.">
+                Launch plan
+              </button>
+              <button type="button" data-suggest="Explain neural networks like I'm building one tonight.">
+                Neural nets
+              </button>
+              <button type="button" data-suggest="What should I prioritize if I have one focused hour?">
+                One focused hour
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="armor" class="section armor reveal">
+      <section id="mind" class="section mind reveal">
         <div class="section-inner">
-          <p class="eyebrow">Armor</p>
-          <h2>A living fortress</h2>
+          <p class="eyebrow">Mind</p>
+          <h2>Three beats in every answer</h2>
           <p class="section-lede">
-            Osteoderms under thick hide, eyes and nostrils set high for a
-            stealth float, and a bite among the strongest in the animal kingdom.
+            Meridian doesn’t just reply — it runs a tiny reasoning ritual first.
           </p>
-
-          <ul class="trait-list" role="list">
+          <ul class="beat-list" role="list">
             <li>
-              <h3>Osteoderm armor</h3>
+              <h3>Sense</h3>
               <p>
-                Bony plates beneath the skin shield the back and help regulate
-                heat after a long cool night.
+                Pull the intent out of the noise — goal, constraints, and what
+                “done” would look like.
               </p>
             </li>
             <li>
-              <h3>Ambush senses</h3>
+              <h3>Weigh</h3>
               <p>
-                Pressure receptors along the jaws detect the faintest ripple —
-                dinner announces itself in the dark.
+                Compare paths, discard the ornate ones, keep the move that
+                compounds.
               </p>
             </li>
             <li>
-              <h3>Powered by patience</h3>
+              <h3>Speak</h3>
               <p>
-                Long periods of stillness conserve energy until a single
-                explosive strike decides the hunt.
+                Return a clean answer: verdict first, then the shortest useful
+                why.
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="range" class="section range reveal">
-        <div class="range-media" aria-hidden="true">
-          <img
-            src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=2000&q=80"
-            alt=""
-            width="2000"
-            height="1333"
-            loading="lazy"
-          />
-          <div class="range-wash"></div>
-        </div>
-        <div class="section-inner range-copy">
-          <p class="eyebrow">Range</p>
-          <h2>From the Carolinas to the Gulf</h2>
-          <p class="section-lede">
-            Freshwater marshes, cypress swamps, slow rivers, and man-made lakes —
-            anywhere warm water meets soft banks.
-          </p>
-          <p class="range-note">
-            Once nearly erased from parts of its range, the American alligator
-            rebounded through legal protection and wetland recovery. It remains a
-            barometer for the health of southern ecosystems.
-          </p>
-        </div>
-      </section>
-
-      <section id="protect" class="section protect reveal">
+      <section id="stack" class="section stack reveal">
         <div class="section-inner">
-          <p class="eyebrow">Protect</p>
-          <h2>Keep the marsh wild</h2>
+          <p class="eyebrow">Stack</p>
+          <h2>Built like an instrument</h2>
           <p class="section-lede">
-            Give alligators space, keep wetlands wet, and never feed a wild
-            gator — a fed alligator is a dead alligator.
+            A front-end AI system demo — neural canvas, console loop, and a
+            local reasoning engine with no server required.
           </p>
-          <div class="protect-actions">
-            <a
-              class="btn btn-primary"
-              href="https://www.fws.gov/species/american-alligator-alligator-mississippiensis"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn from U.S. Fish &amp; Wildlife
-            </a>
-            <a class="btn btn-ghost" href="#top">Back to the surface</a>
-          </div>
+          <dl class="stack-grid">
+            <div>
+              <dt>Runtime</dt>
+              <dd>Browser-native JS</dd>
+            </div>
+            <div>
+              <dt>Interface</dt>
+              <dd>Console + prompt chips</dd>
+            </div>
+            <div>
+              <dt>Motion</dt>
+              <dd>Neural field + typing</dd>
+            </div>
+            <div>
+              <dt>Mode</dt>
+              <dd>Offline-capable demo</dd>
+            </div>
+          </dl>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p class="footer-brand">Stillwater</p>
+      <p class="footer-brand">Meridian</p>
       <p class="footer-meta">
-        A field guide to the American alligator. Photos via Unsplash. Built for
-        curiosity, not captivity.
+        A demo AI system build — local reasoning, no cloud model calls. Designed
+        for clarity over spectacle.
       </p>
     </footer>
 
