@@ -329,31 +329,49 @@ main,
 .cinderella-track {
   position: absolute;
   inset: 0;
+  overflow: hidden;
 }
 
-.cinderella {
+.cinderella,
+.dancer {
   position: absolute;
-  bottom: 8%;
-  left: -10rem;
-  width: clamp(7.5rem, 18vw, 12rem);
-  animation: waltz-across 14s linear infinite;
+  bottom: 6%;
+  left: 0;
+  width: clamp(8.5rem, 20vw, 13rem);
+  transform: translate3d(-20%, 0, 0);
   transform-origin: center bottom;
-  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45));
+  will-change: transform;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.5));
 }
 
 .encore-cinderella {
-  animation-duration: 11s;
-  animation-delay: 0.35s;
-  width: clamp(8.5rem, 20vw, 13.5rem);
+  width: clamp(9.5rem, 22vw, 14.5rem);
 }
 
-.cinderella-img {
+.dancer-bob {
+  position: relative;
   width: 100%;
-  height: auto;
-  animation: dance-bob 0.85s ease-in-out infinite;
-  transform-origin: 50% 90%;
+  aspect-ratio: 3 / 4;
+  transform-origin: 50% 85%;
+  will-change: transform;
+}
+
+.dancer-frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
   mix-blend-mode: lighten;
-  border-radius: 0.25rem;
+  opacity: 0;
+  transition: opacity 70ms linear;
+  pointer-events: none;
+}
+
+.dancer-frame.is-active {
+  opacity: 1;
 }
 
 .split {
@@ -540,39 +558,6 @@ main,
   }
 }
 
-@keyframes waltz-across {
-  0% {
-    left: -10rem;
-    transform: scaleX(1);
-  }
-  48% {
-    left: calc(100% - 5rem);
-    transform: scaleX(1);
-  }
-  50% {
-    left: calc(100% - 5rem);
-    transform: scaleX(-1);
-  }
-  98% {
-    left: -10rem;
-    transform: scaleX(-1);
-  }
-  100% {
-    left: -10rem;
-    transform: scaleX(1);
-  }
-}
-
-@keyframes dance-bob {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-1.5deg);
-  }
-  50% {
-    transform: translateY(-0.7rem) rotate(1.5deg);
-  }
-}
-
 @media (min-width: 720px) {
   .nav {
     display: flex;
@@ -606,8 +591,6 @@ main,
   .lede,
   .hero-actions,
   .reveal,
-  .cinderella,
-  .cinderella-img,
   .sparkle-field span {
     animation: none !important;
     transition: none !important;
@@ -615,9 +598,13 @@ main,
     transform: none !important;
   }
 
-  .cinderella,
+  .dancer,
   .encore-cinderella {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .dancer-bob {
+    transform: none !important;
   }
 }
