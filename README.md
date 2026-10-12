@@ -1,6 +1,6 @@
-# Stillwater — Alligator Field Guide
+# Bloom and Balm
 
-A single-page website about the American alligator: species traits, armor and senses, range, and wetland protection.
+A small-batch chapstick shop. Six botanical lip balms, two gift sets, a cart, and an invoice-style checkout.
 
 ## Develop
 
@@ -15,3 +15,5 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+Checkout collects a shipping address and confirms the order in the browser. No payment is processed.

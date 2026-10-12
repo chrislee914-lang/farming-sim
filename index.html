@@ -3,177 +3,254 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alligator — Stillwater Field Guide</title>
+    <title>Bloom and Balm — Small-batch lip balm</title>
     <meta
       name="description"
-      content="Stillwater: a living portrait of the American alligator — ancient hunter of southern wetlands."
+      content="Bloom and Balm is a small-batch chapstick atelier. Six botanical tins, from damask rose to blood orange, poured to melt on contact."
     />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%23f4efe6' width='64' height='64' rx='12'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23a33d52'/%3E%3Ccircle cx='32' cy='16' r='7' fill='%23e7a0ab'/%3E%3Ccircle cx='46' cy='24' r='7' fill='%23e8b15a'/%3E%3Ccircle cx='46' cy='40' r='7' fill='%23f0a07a'/%3E%3Ccircle cx='32' cy='48' r='7' fill='%238fcec4'/%3E%3Ccircle cx='18' cy='40' r='7' fill='%23cbb6e6'/%3E%3Ccircle cx='18' cy='24' r='7' fill='%23f0ddc2'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#meet">Skip to content</a>
+    <a class="skip-link" href="#shop">Skip to the shop</a>
+
+    <div id="flavor-rail" class="flavor-border" role="region" aria-label="All flavors"></div>
 
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="Stillwater home">Stillwater</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#meet">Species</a>
-        <a href="#armor">Armor</a>
-        <a href="#range">Range</a>
-        <a href="#protect">Protect</a>
+      <a class="logo" href="#top" aria-label="Bloom and Balm home">
+        <span>Bloom</span>
+        <span class="logo-and">&amp; Balm</span>
+      </a>
+      <nav id="site-nav" class="nav" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#sets">Sets</a>
+        <a href="#ritual">Ritual</a>
+        <a href="#story">Story</a>
       </nav>
-      <a class="nav-cta" href="#protect">Take action</a>
+      <div class="header-actions">
+        <button id="open-cart" class="cart-button" type="button" aria-label="Open cart">
+          Cart
+          <span id="cart-count" class="cart-count" hidden>0</span>
+        </button>
+        <button
+          id="menu-button"
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+      </div>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-label="Hero">
-        <div class="hero-media" aria-hidden="true">
-          <img
-            class="hero-image"
-            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2400&q=80"
-            alt=""
-            width="2400"
-            height="1600"
-            fetchpriority="high"
-          />
-          <div class="hero-wash"></div>
-        </div>
+    <p class="announce">Complimentary shipping on orders over $40</p>
 
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="brand">Stillwater</p>
-          <h1>The American alligator</h1>
+          <p class="eyebrow">Small-batch chapstick</p>
+          <h1 id="hero-title">Lips, kept in bloom.</h1>
           <p class="lede">
-            An ancient wetland hunter — armored, patient, and essential to the
-            southern marsh.
+            Six tins of lip balm poured with flowers, honey, and butters. They
+            melt on contact and leave a soft sheen, never a waxy coat.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#meet">Explore the species</a>
-            <a class="btn btn-ghost" href="#range">See the range</a>
+            <a class="btn btn-primary" href="#shop">Shop the tins</a>
+            <a class="btn btn-ghost" href="#story">Read the story</a>
+          </div>
+          <dl class="hero-facts">
+            <div>
+              <dt>Size</dt>
+              <dd>0.15 oz</dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd>$14 a tin</dd>
+            </div>
+            <div>
+              <dt>Made</dt>
+              <dd>In small kettles</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="still-life" aria-hidden="true">
+          <div class="halo"></div>
+          <div class="still-tin still-a">
+            <span class="tin tin-lg" style="--balm:#e7a0ab;--deep:#8d3546">
+              <span class="tin-cap"></span>
+              <span class="tin-body">
+                <span class="tin-mark">B</span>
+                <span class="tin-name">Rose Atelier</span>
+              </span>
+            </span>
+          </div>
+          <div class="still-tin still-b">
+            <span class="tin tin-md" style="--balm:#e8b15a;--deep:#8a5a22">
+              <span class="tin-cap"></span>
+              <span class="tin-body">
+                <span class="tin-mark">B</span>
+                <span class="tin-name">Honey</span>
+              </span>
+            </span>
+          </div>
+          <div class="still-tin still-c">
+            <span class="tin tin-md" style="--balm:#8fcec4;--deep:#24685e">
+              <span class="tin-cap"></span>
+              <span class="tin-body">
+                <span class="tin-mark">B</span>
+                <span class="tin-name">Mint</span>
+              </span>
+            </span>
           </div>
         </div>
       </section>
 
-      <section id="meet" class="section meet reveal">
-        <div class="section-inner">
-          <p class="eyebrow">Species</p>
-          <h2>Built for the blackwater</h2>
-          <p class="section-lede">
-            <em>Alligator mississippiensis</em> has held these waters for
-            millions of years — ambush predator, nest architect, and keystone of
-            the swamp.
-          </p>
+      <div class="ribbon" aria-hidden="true">
+        <div class="ribbon-track">
+          <p>Damask rose · Wildflower honey · Peppermint · Madagascar vanilla · Blood orange · Lavender · Chamomile · Cocoa butter ·</p>
+          <p>Damask rose · Wildflower honey · Peppermint · Madagascar vanilla · Blood orange · Lavender · Chamomile · Cocoa butter ·</p>
+        </div>
+      </div>
 
-          <figure class="feature-media">
-            <img
-              src="https://images.unsplash.com/photo-1563207153-f403bf289096?auto=format&fit=crop&w=1800&q=80"
-              alt="American alligator resting at the water's edge among reeds"
-              width="1800"
-              height="1200"
-              loading="lazy"
-            />
-            <figcaption>
-              Adults can exceed 13 feet and live more than 50 years in the wild.
-            </figcaption>
+      <section id="shop" class="section reveal">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The collection</p>
+            <h2>Six ways to soften a mouth.</h2>
+          </div>
+          <p class="section-lede">
+            Each chapstick is a single scent, labeled by hand. Floral, herbal, or
+            citrus — pick one, or start with the one that looks like your kitchen window.
+          </p>
+        </div>
+        <div id="filters" class="filters" role="group" aria-label="Filter by scent family"></div>
+        <div id="shop-grid" class="grid"></div>
+      </section>
+
+      <section id="sets" class="section sets reveal">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Sets</p>
+            <h2>Give the garden, not a single stem.</h2>
+          </div>
+          <p class="section-lede">
+            Bundles are the same tins, wrapped together, for a little less than the shelf.
+          </p>
+        </div>
+        <div id="bundle-grid" class="grid grid-sets"></div>
+      </section>
+
+      <section id="ritual" class="section ritual reveal">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Ritual</p>
+            <h2>A tin, used properly.</h2>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <h3>Warm the tip</h3>
+            <p>Hold the balm against your lip for a second. It should give before it glides.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>One pass</h3>
+            <p>Sweep once across. A second pass is for wind, winter, or a long lecture.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Pocket it</h3>
+            <p>The cap clicks. Keep it with your keys. Reapply when the sheen goes quiet.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="story" class="section story reveal">
+        <div class="story-panel">
+          <p class="eyebrow">The atelier</p>
+          <h2>Bloom and Balm started as a kitchen kettle.</h2>
+          <p>
+            We wanted chapstick that smelled like the plant it named, not a candle
+            aisle. Beeswax for hold, cocoa butter for slip, and a short list of
+            flowers, peels, and honey. Nothing that numbs. Nothing that vanishes
+            in an hour.
+          </p>
+          <p>
+            Every tin is 0.15 ounces, poured warm, and cooled on a rack by the
+            window. If a batch smells shy, it does not ship.
+          </p>
+        </div>
+        <blockquote>
+          <p>“Rose Atelier is the first balm I have finished and immediately bought again.”</p>
+          <footer>June P. · repeat order of three</footer>
+        </blockquote>
+      </section>
+
+      <section class="section notes reveal" aria-labelledby="notes-title">
+        <p class="eyebrow">Notes</p>
+        <h2 id="notes-title">From people who keep one in every bag.</h2>
+        <div class="note-grid">
+          <figure>
+            <blockquote>Honey Meadow got me through a week of radiators. Soft by Tuesday.</blockquote>
+            <figcaption>Elena V.</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Mint After Rain is cool without that drugstore burn. I use it before calls.</blockquote>
+            <figcaption>Marcus L.</figcaption>
+          </figure>
+          <figure>
+            <blockquote>The Garden Six was the only gift I did not have to explain.</blockquote>
+            <figcaption>Priya S.</figcaption>
           </figure>
         </div>
       </section>
 
-      <section id="armor" class="section armor reveal">
-        <div class="section-inner">
-          <p class="eyebrow">Armor</p>
-          <h2>A living fortress</h2>
-          <p class="section-lede">
-            Osteoderms under thick hide, eyes and nostrils set high for a
-            stealth float, and a bite among the strongest in the animal kingdom.
-          </p>
-
-          <ul class="trait-list" role="list">
-            <li>
-              <h3>Osteoderm armor</h3>
-              <p>
-                Bony plates beneath the skin shield the back and help regulate
-                heat after a long cool night.
-              </p>
-            </li>
-            <li>
-              <h3>Ambush senses</h3>
-              <p>
-                Pressure receptors along the jaws detect the faintest ripple —
-                dinner announces itself in the dark.
-              </p>
-            </li>
-            <li>
-              <h3>Powered by patience</h3>
-              <p>
-                Long periods of stillness conserve energy until a single
-                explosive strike decides the hunt.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="range" class="section range reveal">
-        <div class="range-media" aria-hidden="true">
-          <img
-            src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=2000&q=80"
-            alt=""
-            width="2000"
-            height="1333"
-            loading="lazy"
-          />
-          <div class="range-wash"></div>
-        </div>
-        <div class="section-inner range-copy">
-          <p class="eyebrow">Range</p>
-          <h2>From the Carolinas to the Gulf</h2>
-          <p class="section-lede">
-            Freshwater marshes, cypress swamps, slow rivers, and man-made lakes —
-            anywhere warm water meets soft banks.
-          </p>
-          <p class="range-note">
-            Once nearly erased from parts of its range, the American alligator
-            rebounded through legal protection and wetland recovery. It remains a
-            barometer for the health of southern ecosystems.
-          </p>
-        </div>
-      </section>
-
-      <section id="protect" class="section protect reveal">
-        <div class="section-inner">
-          <p class="eyebrow">Protect</p>
-          <h2>Keep the marsh wild</h2>
-          <p class="section-lede">
-            Give alligators space, keep wetlands wet, and never feed a wild
-            gator — a fed alligator is a dead alligator.
-          </p>
-          <div class="protect-actions">
-            <a
-              class="btn btn-primary"
-              href="https://www.fws.gov/species/american-alligator-alligator-mississippiensis"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn from U.S. Fish &amp; Wildlife
-            </a>
-            <a class="btn btn-ghost" href="#top">Back to the surface</a>
-          </div>
+      <section class="closer reveal">
+        <p class="eyebrow">Open a tin</p>
+        <h2>Start with rose, or take the whole garden.</h2>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop">Shop Bloom and Balm</a>
+          <a class="btn btn-ghost" href="#sets">See the sets</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p class="footer-brand">Stillwater</p>
-      <p class="footer-meta">
-        A field guide to the American alligator. Photos via Unsplash. Built for
-        curiosity, not captivity.
-      </p>
+      <div>
+        <p class="footer-brand">Bloom &amp; Balm</p>
+        <p>Small-batch lip balm. Poured warm, labeled by hand.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#shop">Shop</a>
+        <a href="#sets">Sets</a>
+        <a href="#story">Story</a>
+        <button type="button" data-open-cart>Cart</button>
+      </div>
+      <p class="fine">Checkout emails an invoice. No payment is taken in the browser.</p>
     </footer>
+
+    <dialog id="product-dialog" aria-labelledby="product-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close product">Close</button>
+      <div id="product-body"></div>
+    </dialog>
+
+    <dialog id="cart-dialog" aria-labelledby="cart-title">
+      <header class="drawer-head">
+        <h2 id="cart-title">Your cart</h2>
+        <button class="dialog-close" type="button" data-close aria-label="Close cart">Close</button>
+      </header>
+      <div id="cart-body"></div>
+    </dialog>
+
+    <p id="toast" class="toast" role="status" hidden></p>
 
     <script type="module" src="/src/main.js"></script>
   </body>
